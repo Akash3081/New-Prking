@@ -1,0 +1,16 @@
+current directory: /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/debug-1.7.0/ext/debug
+/home/blubirch/.rvm/rubies/ruby-3.0.0/bin/ruby -I /home/blubirch/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0 -r ./siteconf20221220-16241-yedmo0.rb extconf.rb
+creating Makefile
+
+current directory: /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/debug-1.7.0/ext/debug
+make "DESTDIR=" clean
+
+current directory: /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/debug-1.7.0/ext/debug
+make "DESTDIR="
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/debug-1.7.0/ext/debug
+make "DESTDIR=" install
+/usr/bin/install -m 0755 debug.so ./.gem.20221220-16241-o6hipf/debug

@@ -1,0 +1,8 @@
+<% @cars.each do |car| %>
+<ul>
+  <li><%= link_to car.brand, car_path(car.user_id) %>
+    <%=car.brand%>
+  </li>
+</ul>
+<% end %>
+<h5><%= link_to 'Add New Car', new_car_path(user_id: current_user.id) %></h5>

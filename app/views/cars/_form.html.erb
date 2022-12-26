@@ -1,0 +1,32 @@
+<%= form_with model: car do |form| %>
+  
+  <p>
+    <%= form.hidden_field :user_id %>
+  </p>
+  <p>
+    <%= form.label :brand %><br>
+    <%= form.text_field :brand %>
+  </p>
+  <p>
+    <%= form.label :model %><br>
+    <%= form.text_field :model %>
+  </p>
+  <p>
+    <%= form.label :colour %><br>
+    <%= form.text_field :colour %>
+  </p>
+  <p>
+    <%= form.label :car_number %><br>
+    <%= form.text_field :car_number %>
+  </p>
+  <p>
+    <%= form.label :Owner %><br>
+    <%= form.select :car_owner, ['self', 'onrent', 'other'] %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<br>
+<%= link_to 'Back to Car', cars_path %>
+</div>

@@ -1,0 +1,52 @@
+<%= simple_form_for parking do |form| %>
+  
+  <p>
+    <%= form.label :car_index_number %><br>
+    <%= form.text_field :car_id %>
+  </p>
+  <p>
+    <%= form.label :security_provision %><br>
+    <%= form.text_field :security_provision %>
+  </p>
+  <p>
+    <%= form.label :parking_duration %><br>
+    <%= form.text_field :parking_duration %>
+  </p>
+  <p>
+    <%= form.label :chance_to_get_parking %><br>
+    <%= form.text_field :chance_to_get_parking %>
+  </p>
+  <p>
+    <%= form.label :average_departure_time %><br>
+    <%= form.text_field :average_departure_time %>
+  </p>
+  <p>
+    <%= form.label :parking_cost_per_hour %><br>
+    <%= form.select :parking_cost_per_hour, ['50 rupees per hour', '100 rupees per hour', '400 rupees per hour'] %>
+  </p>
+  <p>
+    <%= form.label :maximum_size %><br>
+    <%= form.select :maximum_size, ['50 parking spaces'] %>
+  </p>
+  <p>
+    <%= form.label :type_of_parking_facility %><br>
+    <%= form.select :type_of_parking_facility, ['angel parking', 'perpendicular parking', 'parallel parking', 'illegal parking', 'lot parking', 'bay parking', 'others'] %>
+  </p>
+  <p>
+    <%= form.label :type_of_security %><br>
+    <%= form.select :type_of_security, ['cctv', 'security guard', 'emergency panel', 'fire proof', 'others'] %>
+  </p>
+  <p>
+    <%= form.label :distance_to_supermarket %><br>
+    <%= form.select :distance_to_supermarket, ['100 meter', '200 meter', '500 meter', '1 km'] %>
+  </p>
+  <p>
+    <%= form.label :distance_from_stores %><br>
+    <%= form.select :distance_from_stores, ['100 meter', '200 meter', '500 meter', '1 km'] %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<br>
+</div>

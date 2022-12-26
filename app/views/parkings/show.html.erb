@@ -1,0 +1,68 @@
+  <div> 
+  <h2>Hello <%= current_user.name %> Here is your complete information of booking</h2>
+  <table border="collaspe" cellpadding="8">
+    <thead>
+      <th>Name</th>
+      <th>email </th>
+    </thead>
+    <tbody>
+      <td><%= current_user.name %></td>
+      <td><%= current_user.email %></td>
+    </tbody>
+  </table>
+  <table border="collaspe" cellpadding="8">
+    <thead>
+      <th>Brand</th>
+      <th>Model </th>
+      <th>Colour </th>
+      <th>Car No. </th>
+      <th>Owner</th>
+    </thead>
+    <tbody>
+      <% current_user.cars.each do |car| %>
+      <td><%= car.brand %></td>
+      <td><%= car.model %></td >
+      <td><%= car.colour %></td>
+      <td><%= car.car_number %></td>
+      <td><%= car.car_owner %></td>
+      <% end %>
+    </tbody>
+    <table border="collaspe" cellpadding="8">
+    <thead>
+      <th>security_provision</th>
+      <th>maximum_size </th>
+      <th>parking_duration </th>
+      <th>chance_to_get_parking</th>
+      <th>parking_cost_per_hour</th><br>
+    </thead>
+    <tbody>
+      <td><%= @parking.security_provision%></td>
+      <td><%= @parking.maximum_size %></td >
+      <td><%= @parking.parking_duration %></td>
+      <td><%= @parking.chance_to_get_parking %></td>
+      <td><%= @parking.parking_cost_per_hour %></td><br>
+    </tbody>
+  </table>
+  <table border="collaspe" cellpadding="8">
+    <thead>
+      <th>average_departure_time</th>
+      <th>type_of_parking_facility </th>
+      <th>type_of_security </th>
+      <th>distance_to_supermarket</th>
+      <th>distance_from_stores</th>
+    </thead>
+    <tbody>
+      <td><%= @parking.average_departure_time %></td>
+      <td><%= @parking.type_of_parking_facility%></td>
+      <td><%= @parking.type_of_security %></td >
+      <td><%= @parking.distance_to_supermarket %></td>
+      <td><%= @parking.distance_from_stores %></td>
+    </tbody>
+  </table>
+</div>
+
+<h4><li><%= link_to "Remove Booking", parking_path(@parking), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li></h4><br>
+<h4><%= link_to 'back to users', root_path %></h4>

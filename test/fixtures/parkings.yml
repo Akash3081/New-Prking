@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  maximum_size: MyString
+  security_provision: MyString
+  parking_duration: MyString
+  chance_to_get_parking: MyString
+  parking_cost_per_hour: MyString
+  average_departure_time: MyString
+  type_of_parking_facility: MyString
+  type_of_security: MyString
+  distance_to_supermarket: MyString
+  distance_from_stores: MyString
+  car: one
+
+two:
+  maximum_size: MyString
+  security_provision: MyString
+  parking_duration: MyString
+  chance_to_get_parking: MyString
+  parking_cost_per_hour: MyString
+  average_departure_time: MyString
+  type_of_parking_facility: MyString
+  type_of_security: MyString
+  distance_to_supermarket: MyString
+  distance_from_stores: MyString
+  car: two
