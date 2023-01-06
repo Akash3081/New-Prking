@@ -25,10 +25,8 @@
     <li><%= link_to "Edit Current Car", edit_car_path(@car) %></li><br>
     <li><%= link_to "All Cars", cars_path %></li><br>
     <li><%= link_to "New Car", new_car_path %></li><br>
-    <li><%= link_to "Remove Car", car_path(@car.id), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></li>
-                  <li><%#= link_to "Book Parking", user_car_parkings_path(@user.id, @car.id, @parking) %></li>
 </ul>
-<h4><%= link_to 'book parking', new_parking_path(@car.id) %>
+<h4><%= link_to 'book parking', new_parking_path(@car.id) %></h4>
+<div>
+  <%= link_to 'parking history', parkings_path %>
+</div>

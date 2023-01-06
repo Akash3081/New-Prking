@@ -1,11 +1,13 @@
 class CarsController < ApplicationController
 
+  before_action :set_car, only: %i[show edit destroy update]
+
   def index
-    @cars = current_user.cars
+    @q = current_user.cars.ransack(params[:q])
+    @cars = @q.result(distinct: true).page(params[:page])
   end
 
   def show
-    @car = Car.find(params[:id])
   end
 
   def new
@@ -23,12 +25,9 @@ class CarsController < ApplicationController
   end
 
   def edit
-    @car = Car.find(params[:id])
   end
 
   def update
-    @car = Car.find(params[:id])
-
     if @car.update(car_params)
       redirect_to @car
     else
@@ -37,14 +36,18 @@ class CarsController < ApplicationController
   end
 
   def destroy
-    @car = Car.find(params[:id])
     @car.destroy
 
     redirect_to root_path, status: :see_other
   end
 
   private
+
   def car_params
-    params.require(:car).permit(:brand, :model, :colour, :car_number, :car_owner, :user_id, parkings_attributes: [:id, :description, :done, :_destroy])
+    params.require(:car).permit(:brand, :model, :colour, :car_number, :car_owner, :user_id)
+  end
+
+  def set_car
+    @car = Car.find(params[:id])
   end
 end

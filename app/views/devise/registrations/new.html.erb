@@ -34,6 +34,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :Role_of_user %><br />
+    <%= f.select(:role_ids, Role.where.not(id:1).pluck(:name, :id),{include_black: true})%>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>

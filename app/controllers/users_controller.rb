@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true).page(params[:page])
   end
 
   def show
@@ -8,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new(:user_id)
+    @user = User.new()
   end
 
   def create
@@ -44,6 +45,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :age, :gender, :contact, :address, :department)
+      params.require(:user).permit(:name, :age, :gender, :contact, :address, :department, :add_role)
     end
 end

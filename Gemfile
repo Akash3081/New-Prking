@@ -13,13 +13,14 @@ gem "sprockets-rails"
 gem "pg"
 gem "devise"
 gem "letter_opener", group: :development
-gem "rolify"
-gem "cancancan"
 gem 'bootstrap'
-gem 'jquery-rails'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
-gem "cocoon"
+gem "kaminari"
+gem 'jquery-rails'
+gem 'ransack'
+gem 'activeadmin'
+
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"

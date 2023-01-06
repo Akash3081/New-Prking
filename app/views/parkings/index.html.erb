@@ -1,3 +1,7 @@
-<h1>Book parking Here</h1>
+<h2>Your parking history</h2>
+<% @parkings.each do |p| %>
+  <ul>
+    <li>parked By the user whose user id is <%= p.user_id %> and the date and time of car parking is <%= p.created_at %>and booked the parking for <%= p.parking_duration %></li>
+  </ul>
+<%end%>
 
-<%= render 'form', parking: @parking %>

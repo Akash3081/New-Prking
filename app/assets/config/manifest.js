@@ -7,6 +7,6 @@
 //= link controllers/hello_controller.js
 //= link controllers/index.js
 //= link honda.jpg
-//= link index.jpg
-//= link images.jpg
 //= link cocoon.js
+//= link_tree ../../javascript .js
+//= link_tree ../../../vendor/javascript .js

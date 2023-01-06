@@ -1,5 +1,6 @@
   <div> 
   <h2>Hello <%= current_user.name %> Here is your complete information of booking</h2>
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   <table border="collaspe" cellpadding="8">
     <thead>
       <th>Name</th>
@@ -9,7 +10,7 @@
       <td><%= current_user.name %></td>
       <td><%= current_user.email %></td>
     </tbody>
-  </table>
+  </table><br>
   <table border="collaspe" cellpadding="8">
     <thead>
       <th>Brand</th>
@@ -26,7 +27,8 @@
       <td><%= car.car_number %></td>
       <td><%= car.car_owner %></td>
       <% end %>
-    </tbody>
+    </tbody></table><br>
+      <div>You got succesfully <%= @parking.parking_name %> place </div>
     <table border="collaspe" cellpadding="8">
     <thead>
       <th>security_provision</th>
@@ -61,8 +63,5 @@
   </table>
 </div>
 
-<h4><li><%= link_to "Remove Booking", parking_path(@parking), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></li></h4><br>
+<h4><li><%= link_to "Remove Booking", parking_path , data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></li></h4><br>
 <h4><%= link_to 'back to users', root_path %></h4>
