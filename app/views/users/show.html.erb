@@ -2,6 +2,7 @@
 <h2>Here is your complete information </h2>
   <table border="collaspe" cellpadding="8">
     <thead>
+      <th>Username</th>
       <th>Name</th>
       <th>Age </th>
       <th>Gender </th>
@@ -10,6 +11,7 @@
       <th>Department</th>
     </thead>
     <tbody>
+      <td><%= @user.username %></td>
       <td><%= @user.name %></td>
       <td><%= @user.age %></td>
       <td><%= @user.gender %></td>

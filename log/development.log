@@ -44273,3 +44273,528 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 200 OK in 209ms (Views: 181.0ms | ActiveRecord: 25.0ms | Allocations: 32402)
 
 
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6818676234543218955)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (10.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(6818676234543218955)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6818676234543218955)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnToParking (20230105053905)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (29.0ms)[0m  [1m[35mALTER TABLE "parkings" DROP COLUMN "parking_name"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "parkings" DROP COLUMN "user_id"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (1.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230105053905"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(6818676234543218955)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6818676234543218955)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnToParking (20230105053905)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mALTER TABLE "parkings" ADD "user_id" integer[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "parkings" ADD "parking_name" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230105053905"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(6818676234543218955)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6818676234543218955)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnToUser (20230106093738)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "username" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230106093738"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(6818676234543218955)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "username" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2023-01-06 09:39:10.145645"], ["username", "user1"], ["id", 1]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "username" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2023-01-06 09:39:18.961608"], ["username", "user2"], ["id", 2]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mParking Load (1.7ms)[0m  [1m[34mSELECT "parkings".* FROM "parkings"[0m
+  [1m[36mParking Load (0.7ms)[0m  [1m[34mSELECT "parkings".* FROM "parkings" WHERE "parkings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCar Load (2.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParking Update (1.1ms)[0m  [1m[33mUPDATE "parkings" SET "updated_at" = $1, "user_id" = $2, "parking_name" = $3 WHERE "parkings"."id" = $4[0m  [["updated_at", "2023-01-06 09:40:51.394021"], ["user_id", 1], ["parking_name", "A1"], ["id", 1]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mParking Load (1.0ms)[0m  [1m[34mSELECT "parkings".* FROM "parkings" WHERE "parkings"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCar Load (0.7ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParking Update (1.6ms)[0m  [1m[33mUPDATE "parkings" SET "updated_at" = $1, "user_id" = $2, "parking_name" = $3 WHERE "parkings"."id" = $4[0m  [["updated_at", "2023-01-06 09:41:08.070196"], ["user_id", 1], ["parking_name", "A2"], ["id", 2]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mParking Load (0.9ms)[0m  [1m[34mSELECT "parkings".* FROM "parkings" WHERE "parkings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCar Load (0.9ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParking Update (1.1ms)[0m  [1m[33mUPDATE "parkings" SET "updated_at" = $1, "user_id" = $2, "parking_name" = $3 WHERE "parkings"."id" = $4[0m  [["updated_at", "2023-01-06 09:41:18.763621"], ["user_id", 1], ["parking_name", "A3"], ["id", 3]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mParking Load (0.8ms)[0m  [1m[34mSELECT "parkings".* FROM "parkings" WHERE "parkings"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCar Load (0.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParking Update (1.0ms)[0m  [1m[33mUPDATE "parkings" SET "updated_at" = $1, "user_id" = $2, "parking_name" = $3 WHERE "parkings"."id" = $4[0m  [["updated_at", "2023-01-06 09:41:33.675551"], ["user_id", 2], ["parking_name", "A4"], ["id", 4]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mParking Load (0.9ms)[0m  [1m[34mSELECT "parkings".* FROM "parkings" WHERE "parkings"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCar Load (0.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParking Update (1.3ms)[0m  [1m[33mUPDATE "parkings" SET "updated_at" = $1, "user_id" = $2, "parking_name" = $3 WHERE "parkings"."id" = $4[0m  [["updated_at", "2023-01-06 09:41:47.256027"], ["user_id", 2], ["parking_name", "A6"], ["id", 6]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mParking Load (0.9ms)[0m  [1m[34mSELECT "parkings".* FROM "parkings" WHERE "parkings"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCar Load (0.7ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParking Update (1.0ms)[0m  [1m[33mUPDATE "parkings" SET "updated_at" = $1, "user_id" = $2, "parking_name" = $3 WHERE "parkings"."id" = $4[0m  [["updated_at", "2023-01-06 09:41:58.312784"], ["user_id", 2], ["parking_name", "A7"], ["id", 8]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mParking Load (1.1ms)[0m  [1m[34mSELECT "parkings".* FROM "parkings"[0m
+  [1m[36mParking Load (0.7ms)[0m  [1m[34mSELECT "parkings".* FROM "parkings" WHERE "parkings"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCar Load (0.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParking Update (1.2ms)[0m  [1m[33mUPDATE "parkings" SET "updated_at" = $1, "user_id" = $2, "parking_name" = $3 WHERE "parkings"."id" = $4[0m  [["updated_at", "2023-01-06 09:42:35.542128"], ["user_id", 2], ["parking_name", "A8"], ["id", 7]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mParking Load (0.9ms)[0m  [1m[34mSELECT "parkings".* FROM "parkings" WHERE "parkings"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2023-01-06 15:13:14 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 641.4ms | Allocations: 64854)
+  Rendered layout layouts/application.html.erb (Duration: 642.8ms | Allocations: 64939)
+Completed 500 Internal Server Error in 676ms (ActiveRecord: 0.0ms | Allocations: 70435)
+
+
+  
+ActionView::Template::Error (couldn't find file 'cocoon.js'
+Checked in these paths: 
+  /home/blubirch/rails/new_project/app/assets/config
+  /home/blubirch/rails/new_project/app/assets/images
+  /home/blubirch/rails/new_project/app/assets/javascripts
+  /home/blubirch/rails/new_project/app/assets/stylesheets
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/stimulus-rails-1.2.1/app/assets/javascripts
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/turbo-rails-1.3.2/app/assets/javascripts
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/importmap-rails-1.1.5/app/assets/javascripts
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/activeadmin-2.13.1/app/assets/javascripts
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/activeadmin-2.13.1/app/assets/stylesheets
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/activeadmin-2.13.1/vendor/assets/javascripts
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/formtastic-4.0.0/app/assets/stylesheets
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/jquery-rails-4.5.1/vendor/assets/javascripts
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/actiontext-7.0.4/app/assets/javascripts
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/actiontext-7.0.4/app/assets/stylesheets
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/actioncable-7.0.4/app/assets/javascripts
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/activestorage-7.0.4/app/assets/javascripts
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/actionview-7.0.4/lib/assets/compiled
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/popper_js-2.11.6/assets/javascripts
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/bootstrap-5.2.3/assets/stylesheets
+  /home/blubirch/rails/new_project/vendor/bundle/ruby/3.0.0/gems/bootstrap-5.2.3/assets/javascripts
+  /home/blubirch/rails/new_project/app/javascript
+  /home/blubirch/rails/new_project/vendor/javascript):
+  
+app/assets/config/manifest.js:10
+Started GET "/" for 127.0.0.1 at 2023-01-06 15:14:35 +0530
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 16063.3ms | Allocations: 120361)
+  Rendered layout layouts/application.html.erb (Duration: 16189.4ms | Allocations: 151247)
+Completed 500 Internal Server Error in 16207ms (ActiveRecord: 0.0ms | Allocations: 151543)
+
+
+  
+ActionView::Template::Error (The asset "cocoon.js" is not present in the asset pipeline.
+):
+     8: 
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_importmap_tags %>
+    11:     <%= javascript_include_tag :cocoon%>
+    12:   </head>
+    13: 
+    14:   <body background-img="" style="background-color: gainsboro;">
+  
+app/views/layouts/application.html.erb:11
+Started GET "/" for 127.0.0.1 at 2023-01-06 15:15:04 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 366.2ms | Allocations: 56888)
+  Rendered layout layouts/application.html.erb (Duration: 499.6ms | Allocations: 88796)
+Completed 500 Internal Server Error in 534ms (ActiveRecord: 0.0ms | Allocations: 94292)
+
+
+  
+ActionView::Template::Error (The asset "cocoon.js" is not present in the asset pipeline.
+):
+     8: 
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_importmap_tags %>
+    11:     <%= javascript_include_tag :cocoon%>
+    12:   </head>
+    13: 
+    14:   <body background-img="" style="background-color: gainsboro;">
+  
+app/views/layouts/application.html.erb:11
+Started GET "/" for 127.0.0.1 at 2023-01-06 15:15:07 +0530
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 605)
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 9597)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms | Allocations: 9889)
+
+
+  
+ActionView::Template::Error (The asset "cocoon.js" is not present in the asset pipeline.
+):
+     8: 
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_importmap_tags %>
+    11:     <%= javascript_include_tag :cocoon%>
+    12:   </head>
+    13: 
+    14:   <body background-img="" style="background-color: gainsboro;">
+  
+app/views/layouts/application.html.erb:11
+Started GET "/" for 127.0.0.1 at 2023-01-06 15:19:47 +0530
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 787)
+  Rendered layout layouts/application.html.erb (Duration: 42.9ms | Allocations: 7920)
+Completed 200 OK in 53ms (Views: 49.5ms | ActiveRecord: 0.0ms | Allocations: 9000)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-01-06 15:19:55 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.9ms | Allocations: 936)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 21.4ms | Allocations: 4745)
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 11017)
+Completed 200 OK in 127ms (Views: 46.2ms | ActiveRecord: 10.6ms | Allocations: 36308)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6818676234543218955)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(6818676234543218955)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for 127.0.0.1 at 2023-01-06 15:42:09 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/index.html.erb within layouts/application (Duration: 20.8ms | Allocations: 25476)
+  Rendered layout layouts/application.html.erb (Duration: 151.8ms | Allocations: 110366)
+Completed 200 OK in 164ms (Views: 150.4ms | ActiveRecord: 3.7ms | Allocations: 118732)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2023-01-06 15:42:11 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 515)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 6950)
+Completed 200 OK in 22ms (Views: 12.4ms | ActiveRecord: 0.7ms | Allocations: 9353)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2023-01-06 15:42:15 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 6602)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.4ms | Allocations: 7429)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2023-01-06 15:42:17 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 6606)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.4ms | Allocations: 7433)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-01-06 15:42:37 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.2ms | Allocations: 936)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 19.4ms | Allocations: 4185)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 10459)
+Completed 200 OK in 42ms (Views: 36.4ms | ActiveRecord: 0.0ms | Allocations: 12449)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2023-01-06 17:17:52 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 506)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 7559)
+Completed 200 OK in 41ms (Views: 9.9ms | ActiveRecord: 5.9ms | Allocations: 12085)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:17:54 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.4ms | Allocations: 604)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 2535)
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 8807)
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 0.0ms | Allocations: 10200)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:19:01 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 604)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2192)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 9018)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 10593)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:19:13 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameter: :username. Context: { controller: Devise::SessionsController, action: new, request: #<ActionDispatch::Request:0x00007f84201937b8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "controller"=>"devise/sessions", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1231)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 7405)
+Completed 200 OK in 230ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 9064)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:19:18 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 440)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameter: :username. Context: { controller: Devise::SessionsController, action: new, request: #<ActionDispatch::Request:0x00007f8444175118>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "controller"=>"devise/sessions", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1231)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 7405)
+Completed 200 OK in 244ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 8076)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:19:21 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 448)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameter: :username. Context: { controller: Devise::SessionsController, action: new, request: #<ActionDispatch::Request:0x00007f84381274b0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "controller"=>"devise/sessions", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1231)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 7405)
+Completed 200 OK in 230ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 8074)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:19:22 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 452)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameter: :username. Context: { controller: Devise::SessionsController, action: new, request: #<ActionDispatch::Request:0x00007f844c0ad7a0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "controller"=>"devise/sessions", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1231)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 7405)
+Completed 200 OK in 237ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 8076)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:19:22 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 446)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameter: :username. Context: { controller: Devise::SessionsController, action: new, request: #<ActionDispatch::Request:0x00007f844c1a3dd0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "controller"=>"devise/sessions", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1231)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 7405)
+Completed 200 OK in 235ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 8075)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:19:23 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 444)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameter: :username. Context: { controller: Devise::SessionsController, action: new, request: #<ActionDispatch::Request:0x00007f844c28a5f0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "controller"=>"devise/sessions", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1231)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 7405)
+Completed 200 OK in 227ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 8074)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:19:23 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 452)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameter: :username. Context: { controller: Devise::SessionsController, action: new, request: #<ActionDispatch::Request:0x00007f844c374cb8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "controller"=>"devise/sessions", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1231)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 7405)
+Completed 200 OK in 247ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 8075)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:19:42 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 604)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2207)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 9025)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 10569)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:19:45 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1255)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 7445)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 8168)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:19:48 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1255)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 7445)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 8175)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:19:51 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1255)
+  Rendered layout layouts/application.html.erb (Duration: 53.7ms | Allocations: 7454)
+Completed 200 OK in 62ms (Views: 56.4ms | ActiveRecord: 0.0ms | Allocations: 8172)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:19:53 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1255)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 7446)
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.0ms | Allocations: 8157)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:19:57 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1255)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 7445)
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 8171)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:20:21 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"user2@text.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 476)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"user2@text.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1258)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 7429)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 8001)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-01-06 17:20:25 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"user2@text.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "user2@text.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 249ms (ActiveRecord: 0.6ms | Allocations: 6700)
+
+
+Started GET "/" for 127.0.0.1 at 2023-01-06 17:20:25 +0530
+Processing by HomesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 808)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:58
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 7862)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.3ms | Allocations: 8810)
+
+
